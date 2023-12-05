@@ -1,6 +1,7 @@
 package com.example;
 
-import com.example.Proxy.ProxyImg;
+import com.example.model.Pessoa;
+import com.example.proxy.PessoaProxy;
 
 /**
  * test Design Pattern Proxy
@@ -8,11 +9,11 @@ import com.example.Proxy.ProxyImg;
  */
 public class App 
 {
-    public static void main( String[] args )
+    public static void main( String[] args ) throws InterruptedException
     {
-        ProxyImg proxyImg = new ProxyImg("test_10mb.jpg");
-        proxyImg.display();
-        System.out.println("");
-        proxyImg.display();
+        Pessoa pessoa = new Pessoa("João", "20", "Masculino");
+        PessoaProxy pessoaProxy = new PessoaProxy(pessoa);
+        System.out.println("Nome: " + pessoaProxy.getNome());
+        System.out.println("Nome: " + pessoaProxy.getNome());
     }
 }
